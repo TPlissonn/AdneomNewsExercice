@@ -1,0 +1,177 @@
+body {
+  background-color: rgb(124, 186, 0);
+  background-image: url("http://www.adneom.com/www/public/images/news.jpg");
+  background-repeat: repeat;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  color: rgb(90, 90, 90);
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}
+
+.pageHeader {
+  height: 200px;
+}
+
+.pageBody {
+  min-width: 400px;
+  min-height: 600px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("http://www.adneom.com/www/public/images/megaphone_bg_news.png");
+  background-repeat: no-repeat;
+}
+
+.clearBoth {
+  clear: both;
+}
+
+.tab-menu {
+  height: 30px;
+  float: left;
+  clear: both;
+}
+
+.tab-menu li {
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin-right: 10px;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.tab-menu li.current {
+  position: relative;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.tab-menu li a {
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  text-decoration: none; 
+}
+
+.tab-menu .current a {
+  color: rgb(0, 0, 0);
+}
+
+.tab {
+  width: 100%;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.3);
+  float: left;
+  clear: both;
+  margin-bottom: 20px;
+  min-height: 400px;
+}
+
+.tab-content {
+  padding: 20px;
+  display: none;
+}
+
+#newsPane {
+  display: block;
+}
+
+.news-post {
+  margin-bottom: 10px;
+}
+
+.first-line h1, .first-line h2, .first-line h3, .first-line h4, .first-line h5, .first-line h6 {
+  display: inline;
+  padding-right: 7px;
+  font-size: 18px;
+}
+
+.news-link, .second-line {
+  font-size: 14px;
+  color: rgb(90, 90, 90);
+}
+
+.second-line {
+  margin-left: 10px;
+}
+
+.comment-panel {
+  margin-left: 35px;
+}
+
+.comment {
+  clear: both;
+  margin-bottom: 5px;
+}
+
+.comment-author, .comment-body {
+  float: left;
+}
+
+.comment-author {
+  min-width: 30px;
+  font-size: 14px;
+  padding-top: 2px;
+  color: rgb(90, 90, 90);
+}
+
+.comment-body {
+  margin-left: 10px;
+}
+
+.commentForm {
+  clear: both;
+}
+
+.commentForm .author-input {
+  font-size: 14px;
+  width: 90px;
+  float: left;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.commentForm .body-input {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.commentForm .comment-submit {
+  float: left;
+}
+
+#postForm {
+  margin-top: 5px;
+  width: 400px
+}
+#postForm input {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.title-input, .link-input {
+  width: 100%;
+}
+
+.post-submit {
+  float: right
+}
+
+.pageFooter {
+  clear: both;
+  height: 200px;
+}

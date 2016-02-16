@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="AdneomNews">
+<head>
+  <title>Adneom News</title>
+  <link rel="stylesheet" type="text/css" href="http://jsfiddle.net/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/common.css" />
+</head>
+<!-- Html -->
+<body ng-controller="MainController">
+  <div class="pageHeader">
+  </div>
+  <div class="pageBody">
+    <ul class="nav tab-menu">
+      <li class="current"><a href="#newsPane">User area</a></li>
+      <li><a href="#formPane">Admin area</a></li>
+    </ul>
+    <div class="tab">
+      <div id="newsPane" class="tab-content">
+        <h1>News List</h1>
+        <div class="news-post" ng-repeat="post in posts | orderBy:'_id':true | filter: hasTitle">
+          <div ng-if="!post.link" class="first-line">
+            <h2>{{$index+1}}.</h2><h2>{{post.title}}</h2><span class="news-link">(no link)</span>
+          </div>
+          <div ng-if="post.link" class="first-line">
+            <h2>{{$index+1}}.</h2><h2><a ng-href="{{post.link}}">{{post.title}}</a></h2><span class="news-link">(&#8202;<a ng-href="http://{{ post.link | domain }}">{{ post.link | domain }}</a>&#8202;)</span>
+          </div>
+          <div class="second-line">
+            <span class="upvotes">{{post.upvotes}} points <a href="javascript:void(0);" ng-click="upvotePost(post._id)">(+)</a></span>
+            <span class="separator">|</span>
+            <span class="comment-number"><a href="javascript:void(0);" ng-click="toggleComments(post._id)">{{post.comments.length}} comment(s)</a></span>
+          </div>
+          <div class="comment-panel" ng-show="postsWithComment[post._id]['show']">
+            <div class="comment" ng-repeat="comment in postsWithComment[post._id]['comments']">
+              <div class="comment-author">{{comment.author}}</div>
+              <div class="comment-body">{{comment.body}}</div>
+              <div class="clearBoth"></div>
+            </div>
+            <comment-form id="commentForm_{{post._id}}" post="post"/>
+            <div class="clearBoth"></div>
+          </div>
+        </div>
+      </div>
+      <div id="formPane" class="tab-content">
+        <h3>New Post</h3>
+        <post-form id="postForm" ></post-form>
+      </div>
+    </div>
+    <div class="clearBoth"></div>
+  </div>
+  <div class="pageFooter">
+  </div>
+  <div>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>
